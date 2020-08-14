@@ -208,9 +208,9 @@ class FeatherIconName {
   static const share = "share";
   static const share2 = "share-2";
   static const shield = "shield";
-  static const shieldOff = "shieldOff";
-  static const shoppingBag = "shoppingBag";
-  static const shoppingCart = "shoppingCart";
+  static const shieldOff = "shield-off";
+  static const shoppingBag = "shopping-bag";
+  static const shoppingCart = "shopping-cart";
   static const shuffle = "shuffle";
   static const sidebar = "sidebar";
   static const skipBack = "skip-back";

@@ -289,18 +289,21 @@ enum Stroke {
 
 class StrokedIcon extends StatelessWidget {
   final String iconName;
-  final int size;
+  final double size;
   final Stroke stroke;
+  final Color color;
 
   StrokedIcon(this.iconName,
-      {this.size = 14, this.stroke = Stroke.stroke_1px,});
+      {this.size = 24, this.stroke = Stroke.stroke_1px, this.color = Colors.black});
 
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       "icons/stroke_$_strokeToString/$iconName.svg",
-      color: Colors.black,
+      color: this.color,
       package: "feather_light_stroke_icons",
+      height: size,
+      width: size,
     );
   }
 

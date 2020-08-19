@@ -124,7 +124,6 @@ class FeatherIconName {
   static const headphones = "headphones";
   static const heart = "heart";
   static const helpCircle = "help-circle";
-  static const help = "help";
   static const home = "home";
   static const image = "image";
   static const inbox = "inbox";
@@ -281,9 +280,14 @@ class FeatherIconName {
   static const zoomOut = "zoom-out";
 }
 
+final _pngWorkarounds = [
+  FeatherIconName.helpCircle,
+  FeatherIconName.alertCircle,
+];
+
 enum Stroke {
-  stroke_1px,
-  stroke_1_5px,
+  light,          // 1px
+  medium,         // 1.5px
 }
 
 
@@ -294,10 +298,20 @@ class StrokedIcon extends StatelessWidget {
   final Color color;
 
   StrokedIcon(this.iconName,
-      {this.size = 24, this.stroke = Stroke.stroke_1px, this.color = Colors.black});
+      {this.size = 24, this.stroke = Stroke.light, this.color = Colors.black});
 
   @override
   Widget build(BuildContext context) {
+    if (_pngWorkarounds.contains(iconName)){
+      return Image.asset(
+        "icons/stroke_$_strokeToString/$iconName.png",
+        color: this.color,
+        package: "feather_light_stroke_icons",
+        height: size,
+        width: size,
+      );
+    }
+
     return SvgPicture.asset(
       "icons/stroke_$_strokeToString/$iconName.svg",
       color: this.color,
@@ -309,9 +323,9 @@ class StrokedIcon extends StatelessWidget {
 
   String get _strokeToString {
     switch (stroke) {
-      case Stroke.stroke_1px:
+      case Stroke.light:
         return "1px";
-      case Stroke.stroke_1_5px:
+      case Stroke.medium:
         return "1.5px";
     }
     return "";

@@ -30,38 +30,47 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: Text("Example")),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text("1px examples icons", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                StrokedIcon(FeatherIconName.activity),
-                StrokedIcon(FeatherIconName.gift),
-              ],
-            ),
-            SizedBox(height: 24),
-            Text("1.5px examples icons", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                StrokedIcon(FeatherIconName.activity, stroke: Stroke.stroke_1_5px),
-                StrokedIcon(FeatherIconName.gift, stroke: Stroke.stroke_1_5px)
-              ],
-            ),
-            Text("Normal examples icons (2px)", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(Feather.activity),
-                Icon(Feather.gift)
-              ],
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text("Light-stroke examples icons (1px)", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  StrokedIcon(FeatherIconName.alertCircle),
+                  StrokedIcon(FeatherIconName.helpCircle),
+                  StrokedIcon(FeatherIconName.activity),
+                  StrokedIcon(FeatherIconName.gift),
+                ],
+              ),
+              SizedBox(height: 24),
+              Text("Medium-stroke examples icons (1.5px)", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  StrokedIcon(FeatherIconName.alertCircle, stroke: Stroke.medium),
+                  StrokedIcon(FeatherIconName.helpCircle, stroke: Stroke.medium),
+                  StrokedIcon(FeatherIconName.activity, stroke: Stroke.medium),
+                  StrokedIcon(FeatherIconName.gift, stroke: Stroke.medium)
+                ],
+              ),
+              Text("Normal examples icons (2px)", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Feather.alert_circle),
+                  Icon(Feather.help_circle),
+                  Icon(Feather.activity),
+                  Icon(Feather.gift),
+                ],
+              ),
+            ],
+          ),
         ),
       )
     );

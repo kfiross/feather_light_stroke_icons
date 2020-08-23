@@ -315,7 +315,7 @@ class StrokedIcon extends StatelessWidget {
 
     if(kIsWeb){
       return Image.network(
-        "icons/stroke_$_strokeToString/$iconName.png",
+        "icons/stroke_$_strokeToString/$iconName.svg",
         color: this.color,
         height: size,
         width: size,

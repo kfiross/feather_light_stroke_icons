@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -312,6 +313,15 @@ class StrokedIcon extends StatelessWidget {
       );
     }
 
+    if(kIsWeb){
+      return Image.network(
+        "icons/stroke_$_strokeToString/$iconName.png",
+        color: this.color,
+        height: size,
+        width: size,
+      );
+    }
+
     return SvgPicture.asset(
       "icons/stroke_$_strokeToString/$iconName.svg",
       color: this.color,
@@ -319,6 +329,8 @@ class StrokedIcon extends StatelessWidget {
       height: size,
       width: size,
     );
+
+
   }
 
   String get _strokeToString {

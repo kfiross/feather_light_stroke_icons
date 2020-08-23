@@ -1,6 +1,6 @@
 name: feather_light_stroke_icons
 description: A new Flutter project.
-version: 0.0.1
+version: 0.0.2
 author:
 homepage:
 
@@ -25,8 +25,8 @@ flutter:
 
   # To add assets to your package, add an assets section, like this:
   assets:
-    - icons/stroke_1px/
-    - icons/stroke_1.5px/
+    - assets/icons/stroke_1px/
+    - assets/icons/stroke_1.5px/
 
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

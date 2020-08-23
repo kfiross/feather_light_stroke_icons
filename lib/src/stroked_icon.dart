@@ -305,7 +305,7 @@ class StrokedIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     if (_pngWorkarounds.contains(iconName)){
       return Image.asset(
-        "icons/stroke_$_strokeToString/$iconName.png",
+        "assets/icons/stroke_$_strokeToString/$iconName.png",
         color: this.color,
         package: "feather_light_stroke_icons",
         height: size,
@@ -315,7 +315,7 @@ class StrokedIcon extends StatelessWidget {
 
     if(kIsWeb){
       return Image.network(
-        "icons/stroke_$_strokeToString/$iconName.svg",
+        "assets/icons/stroke_$_strokeToString/$iconName.svg",
         color: this.color,
         height: size,
         width: size,
@@ -323,7 +323,7 @@ class StrokedIcon extends StatelessWidget {
     }
 
     return SvgPicture.asset(
-      "icons/stroke_$_strokeToString/$iconName.svg",
+      "assets/icons/stroke_$_strokeToString/$iconName.svg",
       color: this.color,
       package: "feather_light_stroke_icons",
       height: size,
